@@ -1,0 +1,2 @@
+C:/Users/daihu/Projects/MadGameTemplate_d3d11/vcpkg_installed/vcpkg/blds/detect_compiler/x64-windows-rel/CMakeFiles/edit_cache.dir
+C:/Users/daihu/Projects/MadGameTemplate_d3d11/vcpkg_installed/vcpkg/blds/detect_compiler/x64-windows-rel/CMakeFiles/rebuild_cache.dir

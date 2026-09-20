@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="MadGameTemplate_d3d11/MadGameTemplate_d3d11.vcxproj" Id="f96d4abd-442b-422c-8b9b-2a9e808b919b" />
+</Solution>
