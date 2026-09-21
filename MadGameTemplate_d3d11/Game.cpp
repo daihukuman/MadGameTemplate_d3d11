@@ -55,7 +55,49 @@ Game::Game(HWND hWnd, HINSTANCE hInst) {
 }
 
 LRESULT Game::WndProc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp) {
-
+	if (msg == WM_NCCREATE) {
+		CREATESTRUCTW* cs = (CREATESTRUCT*)lp;
+		Game* game = (Game*)cs->lpCreateParams;
+		game->Window = hWnd;
+		SetWindowLongPtrW(hWnd, GWLP_USERDATA, (LONG_PTR)game);
+	}
+	Game* game = (Game*)GetWindowLongPtrW(hWnd, GWLP_USERDATA);
+	switch (msg)
+	{
+	case WM_KEYDOWN:
+	{
+		Shared_data::Input::p_keys[wp] = true;
+	}
+	break;
+	case WM_KEYUP:
+	{
+		Shared_data::Input::p_keys[wp] = false;
+	}
+	break;
+	case WM_LBUTTONDOWN:
+	{
+		Shared_data::Input::Mouse::p_Lbutton = true;
+	}
+	break;
+	case WM_LBUTTONUP:
+	{
+		Shared_data::Input::Mouse::p_Lbutton = false;
+	}
+	break;
+	case WM_RBUTTONDOWN:
+	{
+		Shared_data::Input::Mouse::p_Rbutton = true;
+	}
+	break;
+	case WM_RBUTTONUP:
+	{
+		Shared_data::Input::Mouse::p_Rbutton = false;
+	}
+	break;
+	default:
+		return DefWindowProcW(hWnd, msg, wp, lp);
+	}
+	return 0;
 }
 
 void Game::Think(const float deltatime) {

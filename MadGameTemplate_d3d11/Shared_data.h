@@ -23,9 +23,24 @@ public:
 	class Input {
 		friend class Game;
 
+		static wchar_t p_keys[256];
+
 	public:
 
+		const static inline wchar_t *keys = p_keys;
 
+		class Mouse {
+			friend class Game;
+
+			static bool p_Lbutton;
+			static bool p_Rbutton;
+
+		public:
+
+			const static inline bool& Lbutton = p_Lbutton;
+			const static inline bool& Rbutton = p_Rbutton;
+
+		};
 
 	};
 	class Direct3D {
@@ -38,10 +53,10 @@ public:
 
 	public:
 
-		static inline ID3D11Device*& device = p_device;
-		static inline ID3D11DeviceContext*& context = p_context;
-		static inline IDXGISwapChain*& swapchain = p_swapchain;
-		static inline ID3D11RenderTargetView*& Rendertarget = p_Rendertarget;
+		const static inline ID3D11Device*& device = p_device;
+		const static inline ID3D11DeviceContext*& context = p_context;
+		const static inline IDXGISwapChain*& swapchain = p_swapchain;
+		const static inline ID3D11RenderTargetView*& Rendertarget = p_Rendertarget;
 
 	};
 };
