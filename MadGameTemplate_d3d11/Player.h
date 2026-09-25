@@ -8,5 +8,9 @@ class Player : public Entity
 {
 	Microsoft::WRL::ComPtr<ID3D11Texture2D> texture = nullptr;
 public:
+	Player();
+
+	void Think(const float deltatime) override;
+	void Render() override;
 
 };

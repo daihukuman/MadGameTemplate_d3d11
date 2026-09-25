@@ -8,7 +8,9 @@ class Entity
 
 public:
 
-	void Think(const float deltatime);
-	void Render();
+	virtual void Spawn();
+
+	virtual void Think(const float deltatime);
+	virtual void Render();
 
 };

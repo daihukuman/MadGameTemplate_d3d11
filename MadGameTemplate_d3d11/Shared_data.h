@@ -53,10 +53,10 @@ public:
 
 	public:
 
-		const static inline ID3D11Device*& device = p_device;
-		const static inline ID3D11DeviceContext*& context = p_context;
-		const static inline IDXGISwapChain*& swapchain = p_swapchain;
-		const static inline ID3D11RenderTargetView*& Rendertarget = p_Rendertarget;
+		static inline ID3D11Device*& device = p_device;
+		static inline ID3D11DeviceContext*& context = p_context;
+		static inline IDXGISwapChain*& swapchain = p_swapchain;
+		static inline ID3D11RenderTargetView*& Rendertarget = p_Rendertarget;
 
 	};
 };
